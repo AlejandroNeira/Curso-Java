@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Algun Titulo</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form method="post">
+
+    valor: <input type="text" name="valor" th:value="${valor}" /><br/>
+    <input type="submit" value="Calcular" />
+    <h3>El Iva del producto es</h3>
+    <div th:text="${calculo}" />
+</form>
+
+</body>
+</html>
