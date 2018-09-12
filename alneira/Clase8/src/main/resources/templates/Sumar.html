@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Algun Titulo</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form method="post">
+
+    N° 1: <input type="text" name="n1" th:value="${n1}" /><br/>
+    N° 2: <input type="text" name="n2" th:value="${n2}" /><br/>
+    N° 3: <input type="text" name="n3" th:value="${n3}" /><br/>
+    <input type="submit" value="Sumar" />
+    <h3>La suma es igual a</h3>
+    <div th:text="${suma}" />
+</form>
+
+</body>
+</html>
