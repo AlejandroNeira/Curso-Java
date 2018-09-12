@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Algun Titulo</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <form th:object="${producto}" method="post" >
+
+        Nombre: <input type="text" th:field="*{nombre}" /><br/>
+        Precio $: <input type="text" th:field="*{precioPeso}" /><br/>
+        <input type="submit" value="Calcular" />
+        <h3>El valor en dolar es: US</h3>
+        <div th:text="${precioDolar}" />
+    </form>
+</body>
+</html>
