@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <form method="get">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Monto Unitario</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="compra:${listaCompras}">
+                <td th:text="${compra.idCompra}"></td>
+                <td th:text="${compra.nombre}"></td>
+                <td th:text="${compra.montoUnitario}"></td>
+                <td th:text="${compra.cantidad}"></td>
+                <td th:text="${compra.montoUnitario * compra.cantidad}"></td>
+            </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>TOTAL:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td th:text="${total}"></td>
+                </tr>
+            </tfoot>
+        </table>
+    </form>
+</div>
+</body>
+</html>

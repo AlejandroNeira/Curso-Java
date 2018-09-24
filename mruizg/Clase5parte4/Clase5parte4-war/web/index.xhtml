@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Facelet Title</title>
+</h:head>
+<h:body>
+    <h:form>
+        id:
+        <h:inputText value="#{productoBean.producto.idProducto}"/>
+        <br/>
+        nombre:
+        <h:inputText value="#{productoBean.producto.nombre}"/>
+        <br/>
+        precio:
+        <h:inputText value="#{productoBean.producto.precio}"/>
+        <br/>
+        <h:commandButton value="Calcular" action="#{productoBean.calculoIva()}"/>
+        <br/>
+        <h:outputText value="#{productoBean.precioConIva}"/>
+
+        <h:dataTable value="#{productoBean.lista}" var="unalias">
+            <h:column>#{unalias.idProducto}</h:column>
+            <h:column>#{unalias.nombre}</h:column>
+            <h:column>#{unalias.precio}</h:column>
+        </h:dataTable>
+
+    </h:form>
+</h:body>
+</html>
+
