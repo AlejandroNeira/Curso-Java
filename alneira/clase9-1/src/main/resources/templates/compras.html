@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de compras</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <form method="get">
+        <table>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Monto Unidad</th>
+                <th>Cantidad</th>
+                <th>Total</th>
+            </tr>
+            <tr th:each="compras: ${listaCompras}">
+                <td th:text="${compras.idCompra}"/>
+                <td th:text="${compras.nombre}"/>
+                <td th:text="${compras.montoUnitario}"/>
+                <td th:text="${compras.cantidad}"/>
+                <td th:text="${compras.cantidad} * ${compras.montoUnitario}"/>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
