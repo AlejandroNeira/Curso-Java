@@ -1,0 +1,54 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Facelet Title</title>
+    <style>
+        .columna {
+            width: 80px;
+        }
+
+        .tabla {
+            padding: 20px;
+            border: 1px solid #000;
+            margin-bottom: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .link {
+            padding: 5px 20px;
+            background-color: orange;
+            text-decoration: none;
+            color: white;
+        }
+
+        .link:visited {
+            color: white;
+        }
+
+        .titulo {
+            margin: 0 0 20px 0;
+        }
+
+        .contenedor {
+            width: 220px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+    </style>
+</h:head>
+<h:body>
+    <div class="contenedor">
+        <h2 class="titulo">Datos</h2>
+        <h:dataTable class="tabla" value="#{insertarProductoBean.lista}" var="p">
+            <h:column class="columna">#{p.idProducto}</h:column>
+            <h:column class="columna">#{p.nombre}</h:column>
+        </h:dataTable>
+        <a href="insertar.xhtml" class="link">Ir a insertar</a>
+    </div>
+</h:body>
+</html>
+

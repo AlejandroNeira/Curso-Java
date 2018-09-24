@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html">
+<h:head>
+    <title>Facelet Title</title>
+    <style>
+        .link {
+            padding: 5px 20px;
+            background-color: orange;
+            text-decoration: none;
+            color: white;
+        }
+
+        .titulo {
+            margin: 0 0 20px 0;
+        }
+
+        .link:visited {
+            color: white;
+        }
+
+        .contenedor {
+            width: 200px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: #f5f5f5;
+        }
+
+        ul#javax_faces_developmentstage_messages {
+            padding: 10px 20px;
+            background-color: #ff9999;
+            border: 1px solid #ff7777;
+            border-radius: 5px;
+            position: absolute;
+            top: 10px;
+            width: 500px;
+            right: 20px;
+        }
+
+        ul#javax_faces_developmentstage_messages li {
+            color: #f5f5f5 !important;
+        }
+    </style>
+</h:head>
+<h:body>
+    <div class="contenedor">
+        <h2 class="titulo">Formulario</h2>
+        <h:form>
+            <h:outputLabel value="id:"/>
+            <br/>
+            <h:inputText value="#{insertarProductoBean.prod.idProducto}"/>
+            <br/><br/>
+            <h:outputLabel value="nombre:"/>
+            <br/>
+            <h:inputText value="#{insertarProductoBean.prod.nombre}"/>
+            <br/><br/>
+            <h:commandButton value="Guardar" action="#{insertarProductoBean.clickBoton()}"/>
+            <br/><br/>
+            <a href="listado.xhtml" class="link">Ir al listado</a>
+        </h:form>
+    </div>
+</h:body>
+</html>
+
