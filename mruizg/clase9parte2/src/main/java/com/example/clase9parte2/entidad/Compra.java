@@ -17,10 +17,10 @@ public class Compra {
     private String nombre;
 
     @Column(name="montounitario")
-    private String montoUnitario;
+    private int montoUnitario;
 
     @Column(name="cantidad")
-    private String cantidad;
+    private int cantidad;
 
 
     public int getIdCompra() {
@@ -39,19 +39,19 @@ public class Compra {
         this.nombre = nombre;
     }
 
-    public String getMontoUnitario() {
+    public int getMontoUnitario() {
         return montoUnitario;
     }
 
-    public void setMontoUnitario(String montoUnitario) {
+    public void setMontoUnitario(int montoUnitario) {
         this.montoUnitario = montoUnitario;
     }
 
-    public String getCantidad() {
+    public int getCantidad() {
         return cantidad;
     }
 
-    public void setCantidad(String cantidad) {
+    public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
     }
 }

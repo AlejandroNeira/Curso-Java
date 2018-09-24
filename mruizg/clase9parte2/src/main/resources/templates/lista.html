@@ -15,6 +15,7 @@
                 <th>Nombre</th>
                 <th>Monto Unitario</th>
                 <th>Cantidad</th>
+                <th>Total</th>
             </tr>
             </thead>
             <tbody>
@@ -23,9 +24,18 @@
                 <td th:text="${compra.nombre}"></td>
                 <td th:text="${compra.montoUnitario}"></td>
                 <td th:text="${compra.cantidad}"></td>
+                <td th:text="${compra.montoUnitario * compra.cantidad}"></td>
             </tr>
             </tbody>
-
+            <tfoot>
+                <tr>
+                    <td>TOTAL:</td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td th:text="${total}"></td>
+                </tr>
+            </tfoot>
         </table>
     </form>
 </div>
