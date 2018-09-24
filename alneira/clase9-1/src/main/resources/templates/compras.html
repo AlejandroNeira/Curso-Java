@@ -27,6 +27,13 @@
                 <td th:text="${compras.cantidad}"/>
                 <td th:text="${compras.cantidad} * ${compras.montoUnitario}"/>
             </tr>
+            <tr>
+                <th>Total</th>
+                <th></th>
+                <th></th>
+                <th></th>
+                <th th:text="${total}" />
+            </tr>
         </table>
     </form>
 </body>
