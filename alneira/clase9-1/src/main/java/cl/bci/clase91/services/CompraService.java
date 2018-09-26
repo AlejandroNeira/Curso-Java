@@ -10,9 +10,9 @@ public class CompraService {
 
     public int calculoTotal(List<Compra> lista){
         int total = 0;
-        for (Compra compra: lista) {
-            total += (compra.getCantidad() * compra.getMontoUnitario());
-        }
+        //for (Compra compra: lista) {
+        //    total += (compra.getCantidad() * compra.getMontoUnitario());
+        //}
 
 
         return lista.stream().mapToInt(tc -> tc.getCantidad()* tc.getMontoUnitario()).sum();
