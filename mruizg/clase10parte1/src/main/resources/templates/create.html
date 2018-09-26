@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <h1>New Book</h1>
+    <form th:object="${book}" method="post">
+
+        <div class="form-group">
+            <label for="bookName">Name:</label>
+            <input id="bookName" class="form-control" type="text" th:field="*{name}" />
+            <small id="bookNameHelp" class="form-text text-muted">Add a valid Book name.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="author">Author:</label>
+            <input id="author" class="form-control" type="text" th:field="*{author}" />
+            <small id="authorHelp" class="form-text text-muted">Add a valid Author name.</small>
+        </div>
+
+        <div class="form-group">
+            <label for="category">Category:</label>
+            <input id="category" class="form-control" type="text" th:field="*{category}" />
+            <small id="categoryHelp" class="form-text text-muted">Add a valid Category name.</small>
+        </div>
+
+        <input class="btn btn-primary" type="submit" value="Insert" name="button1" />&nbsp;
+        <input class="btn secondary" type="submit" value="Clear" name="button1" />
+
+        <br/>
+        <small th:text="${message}">...</small>
+
+    </form>
+</div>
+</body>
+</html>

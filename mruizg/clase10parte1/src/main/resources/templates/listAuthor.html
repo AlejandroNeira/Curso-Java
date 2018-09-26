@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de compras</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container">
+    <form method="get">
+        <table class="table table-hover">
+            <thead class="thead-dark">
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Country</th>
+                <th>Action</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="author:${authorList}">
+                <td th:text="${author.authorId}"></td>
+                <td th:text="${author.name}"></td>
+                <td th:text="${author.country}"></td>
+                <td><a th:href="@{'/author/' + ${author.authorId}}">Edit</a></td>
+            </tr>
+            </tbody>
+        </table>
+        <a class="btn btn-primary" href="/author/create" role="button">Create a new Author</a>
+    </form>
+</div>
+</body>
+</html>
