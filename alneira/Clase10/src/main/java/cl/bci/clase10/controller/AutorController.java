@@ -45,7 +45,14 @@ public class AutorController {
     public String modificar(Model modelo, @PathVariable("id") int id){
         Optional<Autor> autor = autorRepo.findById(id);
         modelo.addAttribute("autor",autor);
-        return "autor";
+        return "modificaautor";
+    }
+
+    @PostMapping("/{id}")
+    public String modificar(Model modelo, Autor autore){
+        autorRepo.save(autore);
+        //modelo.addAttribute("autor",autor);
+        return "redirect:/autor/listar";
     }
 
 }
