@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Template</title>
+</head>
+<body>
+    <form method="post" th:object="${cliente}">
+        Rut: <input type="text" th:field="*{rut}" /> <br />
+        Nombre: <input type="text" th:field="*{nombre}" /> <br />
+        Salario: <input type="number" th:field="*{salario}" /> <br />
+        <!-- Esto se ve la otra clase Tipo Dinero: <select th:field="*{tipoDinero}">
+            <option value="1">PESOS</option>
+            <option value="2">UF</option>
+            <option value="3">DOLAR</option>
+        </select> -->
+        <input type="submit" th:value="Calcular"/>
+        <span th:if="${ok}">Si se aprueba el credito</span>
+    </form>
+</body>
+</html>

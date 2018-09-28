@@ -21,4 +21,11 @@ public class PeliculasController {
         model.addAttribute("listado",lst);
         return "listado";
     }
+
+    @GetMapping("/listar2")
+    public String listar2(Model model){
+        List<Pelicula> lst = (List<Pelicula>) peliculaRepo.findAll();
+        model.addAttribute("listado",lst);
+        return "listado2";
+    }
 }
