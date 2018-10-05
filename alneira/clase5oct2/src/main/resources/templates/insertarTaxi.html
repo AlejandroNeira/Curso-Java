@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<form method="post" th:object="${taxi}">
+    <h1>Ciudades</h1>
+
+        <label>Patente:</label>
+        <input type="text" th:field="*{patente}"/> <br/>
+        <label>Conductor:</label>
+        <input type="text" th:field="*{conductor}"/> <br/>
+        <input type="submit" value="Agregar" /> <br />
+</form>
+<br />
+<a class="btn btn-lg btn-light" href="/taxi/controller/">Lista</a>
+</body>
+</html>
