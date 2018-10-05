@@ -14,19 +14,20 @@ import java.util.List;
 @Repository
 public class Taxi2Repo {
 
-    @PersistenceUnit
-    private EntityManager em;
+    //@PersistenceUnit
+    //private EntityManager em;
 
-    public List<Taxi> listar(){
-        Query consulta = em.createQuery("SELECT t from Taxi t order by t.patente");
-        return consulta.getResultList()
-    }
+    //public List<Taxi> listar(){
+    //    Query consulta = em.createQuery("SELECT t from Taxi t order by t.patente");
+    //    return consulta.getResultList();
+    //}
 
-    public List<Taxi> lista2r(){
-        CriteriaBuilder cd = em.getCriteriaBuilder();
-        CriteriaQuery<Taxi> query = cd.createQuery(Taxi.class);
-        Root<Taxi> raiz = query.from(Taxi.class);
-        Query consulta = em.createQuery(query);
-        return consulta.getResultList();
-    }
+    //public List<Taxi> lista2r(){
+    //    CriteriaBuilder cd = em.getCriteriaBuilder();
+    //    CriteriaQuery<Taxi> query = cd.createQuery(Taxi.class);
+    //    Root<Taxi> raiz = query.from(Taxi.class);
+    //    query.orderBy(cd.asc(raiz.get("patente")));
+    //    Query consulta = em.createQuery(query);
+    //    return consulta.getResultList();
+    //}
 }
