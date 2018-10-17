@@ -3,10 +3,12 @@ package cl.bci.clase17oct.entity;
 import javax.persistence.*;
 
 @Entity
+@NamedQuery(name = "listarclientes", query = "select c from Client c order by c.name")
 public class Client {
 
     @Id
     @Column(name = "id_cliente")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idClient;
 
     private String name;
