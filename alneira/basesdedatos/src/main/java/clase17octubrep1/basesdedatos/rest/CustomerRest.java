@@ -6,6 +6,7 @@ import clase17octubrep1.basesdedatos.repository.CustomerRepo2;
 import clase17octubrep1.basesdedatos.valueobject.CustomerGroupVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -47,6 +48,16 @@ public class CustomerRest {
 
         return customerRepo2.groupList();
 
+    }
+
+    @GetMapping("/listarsp/{inicio}")
+    public List<Customer> splist(@PathVariable("inicio") String inicio){
+        return customerRepo2.spList(inicio);
+    }
+
+    @GetMapping("/listarcriteria")
+    public List<Customer> listarCriteria(){
+        return customerRepo2.criteriaExample();
     }
 
 }

@@ -4,9 +4,10 @@ import clase17octubrep1.basesdedatos.entity.Customer;
 import clase17octubrep1.basesdedatos.valueobject.CustomerGroupVO;
 import org.springframework.stereotype.Repository;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
-import javax.persistence.Query;
+import javax.persistence.*;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import java.util.List;
 
 @Repository
@@ -43,6 +44,33 @@ public class CustomerRepo2 {
         return request.getResultList();
 
     }
+
+    //usar procedimiento almacenado
+    public List<Customer> spList(String inicio){
+
+        StoredProcedureQuery request = em
+                .createStoredProcedureQuery("customerlist", Customer.class);
+        request.registerStoredProcedureParameter("inicio", String.class, ParameterMode.IN);
+        request.setParameter("inicio", inicio);
+        return request.getResultList();
+
+    }
+
+
+    //usar criteria
+    public List<Customer> criteriaExample(){
+
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<Customer> cquery = cb.createQuery(Customer.class);
+        Root from = cquery.from(Customer.class);
+        cquery.orderBy(cb.asc(from.get("name")));
+        Query request = em.createQuery(cquery);
+        return request.getResultList();
+
+    }
+
+
+
 
 
 }

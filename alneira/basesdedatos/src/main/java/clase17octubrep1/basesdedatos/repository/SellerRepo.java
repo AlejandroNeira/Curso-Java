@@ -17,7 +17,7 @@ public class SellerRepo {
     public List<SellerGroupVO> groupList() {
 
         //crear Query
-        Query request = em.createQuery("select new clase17octubrep1.basesdedatos.valueobject.SellerGroupVO(s.sale.name, count(s)) from Seller s group by s.sale.name"
+        Query request = em.createQuery("select new clase17octubrep1.basesdedatos.valueobject.SellerGroupVO(s.name, count(s)) from Seller s group by s.name"
                 , SellerGroupVO.class);
 
         return request.getResultList();
