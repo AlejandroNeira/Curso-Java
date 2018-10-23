@@ -3,21 +3,21 @@ package cl.bci.clase17oct.entity;
 import javax.persistence.*;
 
 @Entity
-public class Category {
+public class Vendedor {
 
     @Id
+    @Column(name = "id_vendedor")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id_category")
-    private int idCategory;
+    private int idVendedor;
 
     private String name;
 
-    public int getIdCategory() {
-        return idCategory;
+    public int getIdVendedor() {
+        return idVendedor;
     }
 
-    public void setIdCategory(int idCategory) {
-        this.idCategory = idCategory;
+    public void setIdVendedor(int idVendedor) {
+        this.idVendedor = idVendedor;
     }
 
     public String getName() {
@@ -27,4 +27,5 @@ public class Category {
     public void setName(String name) {
         this.name = name;
     }
+
 }

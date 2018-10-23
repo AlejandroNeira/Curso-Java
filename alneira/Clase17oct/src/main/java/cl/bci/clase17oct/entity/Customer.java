@@ -7,6 +7,7 @@ public class Customer {
 
     @Id
     @Column(name = "id_cliente")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idClient;
 
     private String name;
