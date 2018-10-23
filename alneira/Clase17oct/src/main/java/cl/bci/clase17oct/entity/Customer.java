@@ -3,7 +3,7 @@ package cl.bci.clase17oct.entity;
 import javax.persistence.*;
 
 @Entity
-public class Client {
+public class Customer {
 
     @Id
     @Column(name = "id_cliente")
